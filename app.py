@@ -27,12 +27,5 @@ def mark_done(task_id):
     completed_tasks.append(task)
     return redirect("/")
 
-@app.route("/edit/<int:task_id>", methods=["POST"])
-def edit_task(task_id):
-    new_task = request.form.get("new_task")
-    if new_task:
-        tasks[task_id] = new_task
-    return redirect("/")
-
 if __name__ == "__main__":
     app.run(debug=True)
